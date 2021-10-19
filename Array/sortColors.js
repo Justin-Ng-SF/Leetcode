@@ -69,3 +69,68 @@ nums[i] is 0, 1, or 2.
     
     
 };
+//===============================
+/**
+10/18/2021
+ */
+ var sortColors = function(nums) {
+    if(nums.length===1){
+        return nums;
+    }
+    let red = 0;
+    let white = 0;
+    // let blue = nums.length-1;
+    let count = nums.length;
+    let temp;
+    
+    
+    
+    for(let i=0; i<count; i++){
+        while(nums[count-1]===2 && i<=count && i>0){
+            count--;
+        }
+        if(i===count){
+            break;
+        }
+        let color = nums[i];
+        switch(color){
+            //red
+            case 0:
+                if(i!==red){
+                    // console.log(0)
+                    temp = nums[red];
+                    nums[i] = temp;
+                    nums[red] = 0;
+                    red++;
+                    i--;
+                }
+                break;
+            //white    
+            // case 1:
+            //     if(i!==white){
+            //         console.log(1)
+            //         temp = nums[white];
+            //         nums[i] = temp;
+            //         nums[white] = 1;
+            //         white++;
+            //         i--;
+            //     }
+            //     break;
+            //blue    
+            case 2:
+                // console.log(2)
+                temp = nums[count-1];
+                nums[i] = temp;
+                nums[count-1] = 2;
+                count--;
+                i--;
+                break;
+                
+            default:
+                break;
+                
+        }
+    }
+    
+    return nums;
+};
