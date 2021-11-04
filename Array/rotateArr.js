@@ -52,5 +52,13 @@ var rotate = function (nums, k) {
       reverse(0, k-1) // reverse first part ---><----
     reverse(k, nums.length-1)// reverse second part --->----->
      
+
+    /*
+    Splice Method
+    k = k % nums.length;
+    
+    nums = nums.unshift(...nums.splice(nums.length-k))
+    */
+    
  };
  
