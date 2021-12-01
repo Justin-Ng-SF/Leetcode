@@ -23,9 +23,7 @@
             uniqueLetter = letter;
         }
     });
-    
-    // console.log(stringMap)
-    // console.log(uniqueIndex, uniqueLetter)
+   
     return (uniqueIndex<s.length+1) ? uniqueIndex : -1 ;
     
     
